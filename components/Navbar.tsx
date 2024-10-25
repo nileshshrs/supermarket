@@ -30,7 +30,7 @@ const Navbar = () => {
                 </div>
                 <div className='flex gap-4 flex-col items-center justify-between sm:flex-row lg:px-5 md:gap-0 px-3 md:px-0'>
                     <div className='flex items-center justify-between w-full lg:w-auto'>
-                        <h2 className='text-[#ffb566] font-extrabold text-3xl md:text-4xl'>
+                        <h2 className='text-[#ffb566] font-extrabold text-2xl md:text-4xl'>
                             SUPERMARKET
                         </h2>
                         <div className='flex gap-4 sm:hidden'>

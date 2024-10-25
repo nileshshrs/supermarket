@@ -12,7 +12,7 @@ import Image from 'next/image';
 
 const Slider = () => {
     return (
-        <div className='relative h-full'>
+        <section className='relative h-full'>
             <Carousel
                 className='h-auto'
                 plugins={[
@@ -68,7 +68,7 @@ const Slider = () => {
                 <CarouselPrevious className='absolute left-0' />
                 <CarouselNext className='absolute right-0' />
             </Carousel>
-        </div>
+        </section>
     );
 }
 
