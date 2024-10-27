@@ -17,14 +17,40 @@ import {
     TabsList,
     TabsTrigger,
 } from "@/components/ui/tabs";
+import { useQuery } from '@tanstack/react-query';
+import { fetchProducts } from '@/app/products/page';
+import Cards from './Cards';
+import Loader from './Loader';
 
 const Tabview = () => {
     const [activeTab, setActiveTab] = useState("advertised");
 
+    const { data, isLoading } = useQuery({
+        queryKey: ["products"],
+        queryFn: fetchProducts
+    })
+
+    const getRandomProducts = (products: object[]) => {
+        if (!products) return []; // Check if products are available
+        const shuffled = [...products].sort(() => 0.5 - Math.random()); // Shuffle array
+        return shuffled.slice(0, 8); // Get first 5 products
+    };
+
+    const products = getRandomProducts(data);
+
+    const shuffled = [...products].toSorted(() => .5 - Math.random())
+    const half = Math.ceil(shuffled.length / 2);
+
+    const advertisedProducts = shuffled.slice(0, half)
+    const todayProducts = shuffled.slice(half)
+
+    console.log(advertisedProducts)
+    console.log(todayProducts)
+
     return (
         <section className='flex flex-col items-center justify-center py-5 my-5 gap-10'>
             <h3 className='font-extrabold text-2xl'>TOP SELLING OFFERS</h3>
-            <Tabs value={activeTab} onValueChange={(value) => setActiveTab(value)} className="w-full max-w-[400px] md:max-w-[700px] lg:max-w-[1000px] border rounded-none  border-gray-700">
+            <Tabs value={activeTab} onValueChange={(value) => setActiveTab(value)} className="w-full max-w-[400px] md:max-w-[700px] lg:max-w-[1200px] border rounded-none  border-gray-700">
                 <TabsList className="grid w-full grid-cols-2">
                     <TabsTrigger
                         value="advertised"
@@ -44,50 +70,54 @@ const Tabview = () => {
                     </TabsTrigger>
                 </TabsList>
                 <TabsContent value="advertised">
-                    <Card className='border-none'>
-                        <CardHeader>
-                            <CardTitle>Account</CardTitle>
-                            <CardDescription>
-                                Make changes to your account here. Click save when you're done.
-                            </CardDescription>
-                        </CardHeader>
-                        <CardContent className="space-y-2">
-                            <div className="space-y-1">
-                                <Label htmlFor="name">Name</Label>
-                                <Input id="name" defaultValue="Pedro Duarte" />
-                            </div>
-                            <div className="space-y-1">
-                                <Label htmlFor="username">Username</Label>
-                                <Input id="username" defaultValue="@peduarte" />
-                            </div>
-                        </CardContent>
-                        <CardFooter>
-                            <Button>Save changes</Button>
-                        </CardFooter>
-                    </Card>
+                    <div className={
+                        isLoading ? `min-h-[450px] 
+                        grid 
+                        grid-cols-1 
+                        place-content-center 
+                        place-items-center` :
+                            `min-h-[450px] 
+                            grid 
+                            grid-cols-1 
+                            gap-5 p-5 
+                            md:grid-cols-2 
+                            lg:grid-cols-4 
+                            place-content-center 
+                            place-items-center`}>
+                        {isLoading ? < Loader /> :
+                            advertisedProducts.map((product: any) => {
+                                return (
+                                    <Cards key={product.id} product={product} />
+                                )
+                            })
+
+                        }
+                    </div>
                 </TabsContent>
                 <TabsContent value="today">
-                    <Card className='border-none'>
-                        <CardHeader>
-                            <CardTitle>Password</CardTitle>
-                            <CardDescription>
-                                Change your password here. After saving, you'll be logged out.
-                            </CardDescription>
-                        </CardHeader>
-                        <CardContent className="space-y-2">
-                            <div className="space-y-1">
-                                <Label htmlFor="current">Current password</Label>
-                                <Input id="current" type="password" />
-                            </div>
-                            <div className="space-y-1">
-                                <Label htmlFor="new">New password</Label>
-                                <Input id="new" type="password" />
-                            </div>
-                        </CardContent>
-                        <CardFooter>
-                            <Button>Save password</Button>
-                        </CardFooter>
-                    </Card>
+                    <div className={
+                        isLoading ? `min-h-[450px] 
+                        grid 
+                        grid-cols-1 
+                        place-content-center 
+                        place-items-center` :
+                            `min-h-[450px] 
+                            grid 
+                            grid-cols-1 
+                            gap-5 p-5 
+                            md:grid-cols-2 
+                            lg:grid-cols-4 
+                            place-content-center 
+                            place-items-center`}>
+                        {isLoading ? < Loader /> :
+                            todayProducts.map((product: any) => {
+                                return (
+                                    <Cards key={product.id} product={product} />
+                                )
+                            })
+
+                        }
+                    </div>
                 </TabsContent>
             </Tabs>
         </section>

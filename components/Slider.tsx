@@ -29,8 +29,8 @@ const Slider = () => {
                         <Image
                             src="/assets/11.jpg"
                             alt="First image"
-                            layout='fill'
-                            objectFit="cover"
+                            fill // Replaces layout="fill"
+                            style={{ objectFit: 'cover' }} // Replaces objectFit="cover"
                         />
                         <div className="absolute inset-0 flex flex-col justify-center items-center text-white bg-black bg-opacity-50 p-4">
                             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-center">
@@ -42,8 +42,8 @@ const Slider = () => {
                         <Image
                             src="/assets/22.jpg"
                             alt="Second image"
-                            layout='fill'
-                            objectFit="cover"
+                            fill
+                            style={{ objectFit: 'cover' }}
                         />
                         <div className="absolute inset-0 flex flex-col justify-center items-center text-white bg-black bg-opacity-50 p-4">
                             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-center">
@@ -55,8 +55,8 @@ const Slider = () => {
                         <Image
                             src="/assets/44.jpg"
                             alt="Third image"
-                            layout='fill'
-                            objectFit="cover"
+                            fill
+                            style={{ objectFit: 'cover' }}
                         />
                         <div className="absolute inset-0 flex flex-col justify-center items-center text-white bg-black bg-opacity-50 p-4">
                             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-center">

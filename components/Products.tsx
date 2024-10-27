@@ -13,9 +13,10 @@ import {
 } from "@/components/ui/select"
 import { SelectGroup, SelectLabel } from '@radix-ui/react-select'
 import Paginate from './Paginate'
+import Loader from './Loader'
 
 const Products = () => {
-    const { data } = useQuery({
+    const { data, isLoading } = useQuery({
         queryKey: ["products"],
         queryFn: fetchProducts
     })
@@ -54,7 +55,7 @@ const Products = () => {
             <div>asdf</div>
 
             <div className='mt-12'>
-                <div className='flex flex-col md:flex-row items-center justify-end p-4 gap-5'>
+                <div className='flex flex-col md:flex-row justify-center items-center lg:justify-end p-4 gap-5'>
                     {/* Sorting selection */}
                     <div>
                         <Select onValueChange={handleSortOrder}>
@@ -87,26 +88,24 @@ const Products = () => {
                             </SelectContent>
                         </Select>
                     </div>
-
-
-
                 </div>
                 {/* Display products */}
-                <div className="w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 p-4 place-content-center place-items-center">
-                    {paginatedProducts.map((product: any) => {
+                <div className={isLoading ? "w-full grid grid-cols-1 p-4 place-content-center place-items-center" : "w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 p-4 place-content-center place-items-center"}>
+                    {isLoading ? <Loader /> : paginatedProducts.map((product: any) => {
                         return (
                             <Cards key={product.id} product={product} />
                         );
                     })}
                 </div >
-
                 {/* Pagination */}
                 <div>
-                    <Paginate
-                        currentPage={currentPage}
-                        totalPages={totalPages}
-                        onPageChange={setCurrentPage}
-                    />
+                    {
+                        isLoading ? null : <Paginate
+                            currentPage={currentPage}
+                            totalPages={totalPages}
+                            onPageChange={setCurrentPage}
+                        />
+                    }
                 </div>
             </div>
         </div>

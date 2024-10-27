@@ -54,7 +54,7 @@ const Navbar = () => {
             <nav className='bg-[#ffb566] py-2 px-3'>
                 <ul className='hidden md:flex justify-evenly'>
                     <li>
-                        <Link className="font-bold" href={""}>Home</Link>
+                        <Link className="font-bold" href={"/"}>Home</Link>
                     </li>
                     <li>
                         <Link className="font-bold" href={"/products"}>Products</Link>
