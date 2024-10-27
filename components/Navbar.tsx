@@ -57,7 +57,7 @@ const Navbar = () => {
                         <Link className="font-bold" href={""}>Home</Link>
                     </li>
                     <li>
-                        <Link className="font-bold" href={""}>Products</Link>
+                        <Link className="font-bold" href={"/products"}>Products</Link>
                     </li>
                     <li>
                         <Link className="font-bold" href={""}>Contact</Link>
