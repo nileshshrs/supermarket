@@ -1,4 +1,4 @@
-import { dehydrate, HydrationBoundary, QueryClient, useQuery } from "@tanstack/react-query";
+import { dehydrate, HydrationBoundary, QueryClient } from "@tanstack/react-query";
 import axiosInstance from "@/utils/AxiosInstance";
 import Products from "@/components/Products";
 
