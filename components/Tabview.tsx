@@ -44,9 +44,6 @@ const Tabview = () => {
     const advertisedProducts = shuffled.slice(0, half)
     const todayProducts = shuffled.slice(half)
 
-    console.log(advertisedProducts)
-    console.log(todayProducts)
-
     return (
         <section className='flex flex-col items-center justify-center py-5 my-5 gap-10'>
             <h3 className='font-extrabold text-2xl'>TOP SELLING OFFERS</h3>

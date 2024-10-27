@@ -60,7 +60,7 @@ const Navbar = () => {
                         <Link className="font-bold" href={"/products"}>Products</Link>
                     </li>
                     <li>
-                        <Link className="font-bold" href={""}>Contact</Link>
+                        <Link className="font-bold" href={"/contact"}>Contact</Link>
                     </li>
                 </ul>
                 <div className='flex md:hidden justify-end px-4'>
