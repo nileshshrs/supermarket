@@ -18,9 +18,9 @@ import {
     TabsTrigger,
 } from "@/components/ui/tabs";
 import { useQuery } from '@tanstack/react-query';
-import { fetchProducts } from '@/app/products/page';
 import Cards from './Cards';
 import Loader from './Loader';
+import { fetchProducts } from '@/utils/Provider';
 
 const Tabview = () => {
     const [activeTab, setActiveTab] = useState("advertised");
