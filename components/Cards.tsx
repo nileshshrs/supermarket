@@ -26,7 +26,7 @@ const Cards: React.FC<cards> = ({ product }) => {
 
     return (
         <Card className="border-gray-700 w-56 h-80 flex flex-col justify-between items-center p-3 pt-10 rounded-md hover:shadow-md  hover:shadow-slate-500 transition"> {/* Set a fixed width and height */}
-            <Link href={`/${product.id}`} className='w-full h-full flex flex-col justify-between items-center p-2 gap-3'>
+            <Link href={`/products/${product.id}`} className='w-full h-full flex flex-col justify-between items-center p-2 gap-3'>
                 <CardContent className="flex flex-col items-center space-y-2 py-0 px-0">
                     <Image
                         src={product.images[0].imageName}
