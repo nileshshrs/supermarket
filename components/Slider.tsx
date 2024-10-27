@@ -31,6 +31,7 @@ const Slider = () => {
                             alt="First image"
                             fill // Replaces layout="fill"
                             style={{ objectFit: 'cover' }} // Replaces objectFit="cover"
+                            priority
                         />
                         <div className="absolute inset-0 flex flex-col justify-center items-center text-white bg-black bg-opacity-50 p-4">
                             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-center">

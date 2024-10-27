@@ -11,7 +11,6 @@ const Images = () => {
                         <Image
                             src="/assets/p2.jpg" // Replace with your image source
                             alt="Image 2"
-                            layout="responsive"
                             width={1000}
                             height={600}
                             className="rounded-lg"
@@ -24,7 +23,6 @@ const Images = () => {
                             <Image
                                 src="/assets/p3.jpg" // Replace with your image source
                                 alt="Image 3"
-                                layout="responsive"
                                 width={500}
                                 height={300}
                                 className="rounded-lg"
@@ -36,7 +34,6 @@ const Images = () => {
                             <Image
                                 src="/assets/p4.jpg" // Replace with your image source
                                 alt="Image 4"
-                                layout="responsive"
                                 width={500}
                                 height={300}
                                 className="rounded-lg"
@@ -52,7 +49,6 @@ const Images = () => {
                     <Image
                         src="/assets/111.jpg" // Replace with your image source
                         alt="Image 1"
-                        layout="responsive"
                         width={1000}
                         height={580}
                         className="rounded-lg"

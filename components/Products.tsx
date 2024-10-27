@@ -1,6 +1,4 @@
 "use client"
-
-import { fetchProducts } from '@/utils/Provider'
 import { useQuery } from '@tanstack/react-query'
 import React, { useState } from 'react'
 import Cards from './Cards'
@@ -11,9 +9,10 @@ import {
     SelectTrigger,
     SelectValue,
 } from "@/components/ui/select"
-import { SelectGroup, SelectLabel } from '@radix-ui/react-select'
+import { SelectGroup } from '@radix-ui/react-select'
 import Paginate from './Paginate'
 import Loader from './Loader'
+import { fetchProducts } from '@/app/products/page'
 
 const Products = () => {
     const { data, isLoading } = useQuery({

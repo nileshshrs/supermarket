@@ -29,8 +29,8 @@ const Sliders = () => {
                         <Image
                             src="/assets/b1.jpg"
                             alt="First image"
-                            layout='fill'
-                            objectFit="cover"
+                            fill
+                            style={{ objectFit: 'cover' }}
                         />
                         <div className="absolute inset-0 bg-black opacity-50 z-10"></div> {/* Translucent black overlay */}
                     </CarouselItem>
@@ -38,8 +38,8 @@ const Sliders = () => {
                         <Image
                             src="/assets/b3.jpg"
                             alt="Second image"
-                            layout='fill'
-                            objectFit="cover"
+                            fill
+                            style={{ objectFit: 'cover' }}
                         />
                         <div className="absolute inset-0 bg-black opacity-50 z-10"></div> {/* Translucent black overlay */}
                     </CarouselItem>
@@ -47,8 +47,8 @@ const Sliders = () => {
                         <Image
                             src="/assets/b1.jpg"
                             alt="Third image"
-                            layout='fill'
-                            objectFit="cover"
+                            fill
+                            style={{ objectFit: 'cover' }}
                         />
                         <div className="absolute inset-0 bg-black opacity-50 z-10"></div> {/* Translucent black overlay */}
                     </CarouselItem>

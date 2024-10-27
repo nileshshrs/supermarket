@@ -20,7 +20,7 @@ import {
 import { useQuery } from '@tanstack/react-query';
 import Cards from './Cards';
 import Loader from './Loader';
-import { fetchProducts } from '@/utils/Provider';
+import { fetchProducts } from '@/app/products/page';
 
 const Tabview = () => {
     const [activeTab, setActiveTab] = useState("advertised");
