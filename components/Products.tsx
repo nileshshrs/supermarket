@@ -1,6 +1,6 @@
 "use client"
 
-import { fetchProducts } from '@/app/products/page'
+import { fetchProducts } from '@/utils/Provider'
 import { useQuery } from '@tanstack/react-query'
 import React, { useState } from 'react'
 import Cards from './Cards'
@@ -52,7 +52,7 @@ const Products = () => {
 
     return (
         <div className='flex flex-grow'>
-            <div>asdf</div>
+            {/* <div>asdf</div> */}
 
             <div className='mt-12'>
                 <div className='flex flex-col md:flex-row justify-center items-center lg:justify-end p-4 gap-5'>

@@ -18,9 +18,9 @@ import {
     TabsTrigger,
 } from "@/components/ui/tabs";
 import { useQuery } from '@tanstack/react-query';
-import { fetchProducts } from '@/app/products/page';
 import Cards from './Cards';
 import Loader from './Loader';
+import { fetchProducts } from '@/utils/Provider';
 
 const Tabview = () => {
     const [activeTab, setActiveTab] = useState("advertised");
@@ -43,9 +43,6 @@ const Tabview = () => {
 
     const advertisedProducts = shuffled.slice(0, half)
     const todayProducts = shuffled.slice(half)
-
-    console.log(advertisedProducts)
-    console.log(todayProducts)
 
     return (
         <section className='flex flex-col items-center justify-center py-5 my-5 gap-10'>
